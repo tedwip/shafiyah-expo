@@ -1148,8 +1148,9 @@
       display: block;
       width: 100%;
       height: auto;
-      min-height: 340px;
-      object-fit: cover;
+      min-height: 0;
+      object-fit: contain;
+      object-position: center top;
     }
 
     .rundown-placeholder {
@@ -1741,17 +1742,7 @@
       }
 
       .rundown-arrow {
-        width: 42px;
-        height: 42px;
-        font-size: 30px;
-      }
-
-      .rundown-prev {
-        left: 10px;
-      }
-
-      .rundown-next {
-        right: 10px;
+        display: none;
       }
 
       .rundown-track {
