@@ -66,8 +66,8 @@
       --radius-xl: 34px;
       --radius-lg: 26px;
       --radius-pill: 999px;
-      --hero-banner-desktop: url('/assets/images/hero/Hero-Banner.webp');
-      --hero-banner-mobile: url('/assets/images/hero/Hero-Banner.webp');
+      --hero-banner-desktop: url('/assets/images/hero/herobanner-dekstop.webp');
+      --hero-banner-mobile: url('/assets/images/hero/herobanner-mobile.webp');
 
       --rn-primary: #1B5E20;
       --rn-primary-light: #4CAF50;
@@ -1600,9 +1600,13 @@
       background: var(--green-dark);
       color: var(--cream-light);
       box-shadow: 0 14px 34px rgba(8, 24, 14, 0.34);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.05em;
+      line-height: 0;
+    }
+
+    .rn-back-to-top-icon {
+      width: 26px;
+      height: 26px;
+      display: block;
     }
 
     .rn-whatsapp-fab.is-visible,
@@ -1879,4 +1883,3 @@
         grid-template-columns: 1fr;
       }
     }
-
