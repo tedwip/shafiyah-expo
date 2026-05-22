@@ -3,31 +3,15 @@
       src: url('/assets/SundashExtrabold.otf') format('opentype');
       font-style: normal;
       font-weight: 800;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Shafiyah Heading';
-      src: url('/assets/Rink-Bold.otf') format('opentype');
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
+      font-display: optional;
     }
 
     @font-face {
       font-family: 'Shafiyah Heading';
       src: url('/assets/Rink-Extrabold.otf') format('opentype');
       font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Shafiyah Heading';
-      src: url('/assets/Rink-Black.otf') format('opentype');
-      font-style: normal;
-      font-weight: 900;
-      font-display: swap;
+      font-weight: 700;
+      font-display: optional;
     }
 
     @font-face {
@@ -35,7 +19,7 @@
       src: url('/assets/Helvena-Regular.otf') format('opentype');
       font-style: normal;
       font-weight: 400;
-      font-display: swap;
+      font-display: optional;
     }
 
     @font-face {
@@ -43,14 +27,14 @@
       src: url('/assets/Helvena-Bold.otf') format('opentype');
       font-style: normal;
       font-weight: 700;
-      font-display: swap;
+      font-display: optional;
     }
 
     :root {
-      --font-brand: 'Shafiyah Heading', sans-serif;
-      --font-heading: 'Shafiyah Heading', sans-serif;
-      --font-body: 'Shafiyah Body', sans-serif;
-      --font-accent: 'Shafiyah Brand', sans-serif;
+      --font-brand: 'Shafiyah Heading', 'Arial Black', Arial, sans-serif;
+      --font-heading: 'Shafiyah Heading', 'Arial Black', Arial, sans-serif;
+      --font-body: 'Shafiyah Body', Arial, sans-serif;
+      --font-accent: 'Shafiyah Brand', 'Shafiyah Heading', 'Arial Black', Arial, sans-serif;
 
       --green: #143f26;
       --green-dark: #0b2a18;
@@ -133,6 +117,15 @@
       background:
         radial-gradient(circle at top left, rgba(225, 177, 59, 0.12), transparent 32%),
         linear-gradient(180deg, #ebe8de 0%, var(--cream) 100%);
+    }
+
+    .section,
+    .ticket-section,
+    .rundown-slider-section,
+    .cta-final,
+    .footer {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 760px;
     }
 
     h1,
@@ -511,12 +504,6 @@
     .rn-organic-float.is-float-active {
       animation: rn-organic-float 8.5s ease-in-out infinite;
       animation-delay: var(--rn-float-delay, 0s);
-      will-change: transform;
-    }
-
-    .rn-soft-parallax {
-      transform: translate3d(0, var(--rn-parallax-y, 0px), 0);
-      transition: transform 0.16s linear;
       will-change: transform;
     }
 
@@ -1631,10 +1618,6 @@
       .rn-organic-float.is-float-active {
         animation: none;
         will-change: auto;
-      }
-
-      .rn-soft-parallax {
-        transform: none !important;
       }
 
       .marquee-track {

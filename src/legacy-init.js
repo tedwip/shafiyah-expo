@@ -26,7 +26,6 @@ const navbar = document.getElementById("navbar");
       }
 
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const sections = document.querySelectorAll("main > section");
       const floatingBuy = document.querySelector(".floating-buy");
       const whatsappFab = document.querySelector(".rn-whatsapp-fab");
       const backToTopBtn = document.querySelector(".rn-back-to-top");
@@ -41,12 +40,8 @@ const navbar = document.getElementById("navbar");
       function assignMotionClasses() {
         addMotion(".brand-logo", "rn-animate rn-fade-in");
         addMotion(".nav-links a", "rn-animate rn-fade-in");
-        addMotion(".hero-meta, .hero-actions, .program-grid, .ticket-grid, .steps-grid, .partner-logo-grid, .faq-grid, .terms-accordion, .footer-grid", "rn-stagger");
-        addMotion(".hero", "rn-organic-float");
-        addMotion(".hero-inner", "rn-soft-parallax");
-        addMotion(".eyebrow, .hero h1, .hero p", "rn-animate rn-fade-up");
-        addMotion(".hero-actions .btn", "rn-animate rn-scale-in rn-button-motion");
-        addMotion(".hero-meta span", "rn-animate rn-scale-in");
+        addMotion(".program-grid, .ticket-grid, .steps-grid, .partner-logo-grid, .faq-grid, .terms-accordion, .footer-grid", "rn-stagger");
+        addMotion(".hero-actions .btn", "rn-button-motion");
         addMotion(".countdown-wrap", "rn-animate rn-fade-up rn-card-motion");
         addMotion(".section-heading .section-kicker, .section-heading h2, .section-heading p", "rn-animate rn-fade-up");
         addMotion(".split-card:first-child", "rn-animate rn-slide-right rn-card-motion");
@@ -55,11 +50,8 @@ const navbar = document.getElementById("navbar");
         addMotion(".rundown-slider, .venue-card", "rn-animate rn-scale-in");
         addMotion(".rundown-slide img, .partner-logo img, .footer-brand-logo", "rn-image-reveal");
         addMotion(".btn, .ticket-btn, .nav-cta, .floating-buy a", "rn-button-motion");
-        addMotion(".section, .ticket-section, .rundown-slider-section, .stats", "rn-organic-float");
-        addMotion(".marquee", "rn-organic-float");
 
         document.querySelectorAll(".hero h1 span").forEach(function (el, index) {
-          el.classList.add("rn-animate", "rn-slide-right");
           el.style.setProperty("--rn-delay", (0.2 + (index * 0.12)).toFixed(2) + "s");
         });
 
@@ -101,29 +93,6 @@ const navbar = document.getElementById("navbar");
         if (backToTopBtn) {
           backToTopBtn.classList.toggle("is-visible", showBackTop);
         }
-      }
-
-      function initSoftParallax() {
-        if (reduceMotion || window.innerWidth < 900) {
-          return;
-        }
-
-        const parallaxItems = document.querySelectorAll(".rn-soft-parallax");
-        if (!parallaxItems.length) {
-          return;
-        }
-
-        const handleParallax = function () {
-          const y = window.scrollY || window.pageYOffset;
-          parallaxItems.forEach(function (el, index) {
-            const speed = 0.03 + (index * 0.006);
-            const shift = Math.max(-18, Math.min(18, y * speed * -1));
-            el.style.setProperty("--rn-parallax-y", shift.toFixed(2) + "px");
-          });
-        };
-
-        handleParallax();
-        window.addEventListener("scroll", handleParallax, { passive: true });
       }
 
       function initMotionObserver() {
@@ -184,13 +153,22 @@ const navbar = document.getElementById("navbar");
       assignMotionClasses();
       document.body.classList.add("motion-ready");
       initMotionObserver();
-      initSoftParallax();
       initNavbarScrollState();
       updateFloatingState();
 
-      window.addEventListener("scroll", function () {
+      let scrollTicking = false;
+
+      function updateScrollState() {
         initNavbarScrollState();
         updateFloatingState();
+        scrollTicking = false;
+      }
+
+      window.addEventListener("scroll", function () {
+        if (!scrollTicking) {
+          scrollTicking = true;
+          window.requestAnimationFrame(updateScrollState);
+        }
       }, { passive: true });
 
       if (backToTopBtn) {
