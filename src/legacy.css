@@ -805,10 +805,8 @@
 
     .ticket-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 22px;
-      max-width: 960px;
-      margin: 0 auto;
     }
 
     .ticket-card {
@@ -904,6 +902,49 @@
     .ticket-price span {
       font-size: 18px;
       margin-right: 4px;
+    }
+
+    .ticket-price-list {
+      display: grid;
+      gap: 8px;
+      margin: 22px 0 20px;
+    }
+
+    .ticket-price-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(20, 63, 38, 0.10);
+    }
+
+    .ticket-price-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .ticket-price-name {
+      color: var(--muted);
+      font-family: var(--font-heading);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .ticket-price-value {
+      color: var(--green);
+      font-family: var(--font-heading);
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .ticket-price-value span {
+      font-size: 14px;
+      margin-right: 3px;
     }
 
     .ticket-benefits {
