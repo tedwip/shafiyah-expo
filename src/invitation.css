@@ -72,9 +72,9 @@
 }
 
 .inv-hero-logo.is-pureway {
-  width: 104px;
-  max-width: 104px;
-  padding: 0 7px;
+  width: 112px;
+  max-width: 112px;
+  padding: 0 20px;
   object-fit: cover;
   object-position: center;
 }
@@ -631,9 +631,9 @@
   }
 
   .inv-hero-logo.is-pureway {
-    width: min(100%, 104px);
-    max-width: 104px;
-    padding: 0 7px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 clamp(18px, 5.8vw, 24px);
   }
 
   .inv-eyebrow-row {
