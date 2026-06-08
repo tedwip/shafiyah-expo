@@ -20,11 +20,11 @@
   min-height: 720px;
   display: flex;
   align-items: flex-end;
-  padding: 130px 0 82px;
+  padding: 84px 0 82px;
   color: #fffaf1;
   background:
     linear-gradient(90deg, rgba(9, 35, 20, 0.92), rgba(9, 35, 20, 0.58)),
-    url("/assets/images/hero/herobanner-dekstop.webp") center/cover no-repeat;
+    url("/assets/images/hero/Hero-Banner.webp") center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -44,6 +44,39 @@
 .inv-hero-slider {
   min-height: 338px;
   animation: inv-slide-in 0.45s ease both;
+}
+
+.inv-hero-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  max-width: 1010px;
+  margin-bottom: 20px;
+}
+
+.inv-hero-logo {
+  display: block;
+  width: auto;
+  max-width: 176px;
+  height: clamp(34px, 3.6vw, 48px);
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 250, 241, 0.94);
+  object-fit: contain;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.inv-hero-logo.is-bsi {
+  max-width: 184px;
+}
+
+.inv-hero-logo.is-pureway {
+  width: 136px;
+  max-width: 136px;
+  padding: 0 8px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .inv-eyebrow-row {
@@ -330,6 +363,82 @@
   margin-bottom: 34px;
 }
 
+.inv-speakers {
+  color: #fffaf1;
+  background:
+    linear-gradient(180deg, rgba(12, 48, 29, 0.94), rgba(9, 35, 20, 0.9)),
+    url("/assets/images/hero/Hero-Banner.webp") center/cover no-repeat;
+}
+
+.inv-speakers-heading {
+  max-width: 860px;
+}
+
+.inv-speakers .inv-section-kicker {
+  color: #f4dfaa;
+  background: rgba(255, 250, 241, 0.1);
+  border-color: rgba(244, 223, 170, 0.36);
+}
+
+.inv-speakers .inv-section-heading h2 {
+  color: #fffaf1;
+}
+
+.inv-speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.inv-speaker-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 5 / 7;
+  border-radius: 8px;
+  background: #143f26;
+  border: 1px solid rgba(244, 223, 170, 0.18);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+}
+
+.inv-speaker-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.inv-speaker-card::after {
+  content: "";
+  position: absolute;
+  inset: 26% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(6, 22, 13, 0.92));
+}
+
+.inv-speaker-info {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  padding: 15px 14px;
+}
+
+.inv-speaker-info h3 {
+  margin: 0;
+  color: #fffaf1;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.inv-speaker-info p {
+  margin: 6px 0 0;
+  color: rgba(255, 250, 241, 0.72);
+  font-size: 10.5px;
+  line-height: 1.28;
+}
+
 .inv-rundown-list {
   display: grid;
   gap: 26px;
@@ -468,10 +577,10 @@
 @media (max-width: 920px) {
   .inv-hero {
     min-height: 680px;
-    padding: 118px 0 70px;
+    padding: 72px 0 70px;
     background:
       linear-gradient(180deg, rgba(9, 35, 20, 0.9), rgba(9, 35, 20, 0.58)),
-      url("/assets/images/hero/herobanner-mobile.webp") center/cover no-repeat;
+      url("/assets/images/hero/Hero-Banner.webp") center/cover no-repeat;
   }
 
   .inv-meta-grid,
@@ -482,6 +591,10 @@
   .inv-rsvp-panel {
     padding: 24px;
   }
+
+  .inv-speaker-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -491,11 +604,36 @@
 
   .inv-hero {
     min-height: auto;
-    padding: 72px 0 42px;
+    padding: 44px 0 42px;
   }
 
   .inv-hero-slider {
     min-height: auto;
+  }
+
+  .inv-hero-logo-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .inv-hero-logo {
+    max-width: 100%;
+    width: 100%;
+    height: 42px;
+    padding: 8px;
+    margin: 0 auto;
+  }
+
+  .inv-hero-logo.is-bsi {
+    height: 42px;
+  }
+
+  .inv-hero-logo.is-pureway {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 4px;
   }
 
   .inv-eyebrow-row {
@@ -676,6 +814,23 @@
     margin-bottom: 22px;
   }
 
+  .inv-speaker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .inv-speaker-info {
+    padding: 13px 12px;
+  }
+
+  .inv-speaker-info h3 {
+    font-size: 13px;
+  }
+
+  .inv-speaker-info p {
+    font-size: 10px;
+  }
+
   .inv-rundown-list {
     gap: 18px;
   }
@@ -823,7 +978,7 @@
   }
 
   .inv-hero {
-    padding-top: 58px;
+    padding-top: 36px;
   }
 
   .inv-hero h1 {

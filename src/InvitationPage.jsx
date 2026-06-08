@@ -6,6 +6,93 @@ const EVENT_LOCATION = "Jogja Expo Center";
 const EVENT_MAP_URL =
   "https://www.google.com/maps/search/?api=1&query=Jogja%20Expo%20Center";
 
+const eventLogos = [
+  {
+    name: "BSI",
+    src: "/assets/images/logos/sponsor/bsi.png",
+    className: "is-bsi",
+  },
+  {
+    name: "Rumaysho",
+    src: "/assets/images/logos/organizer/rumaysho.png",
+  },
+  {
+    name: "Shafiyah Shalihah",
+    src: "/assets/images/logos/organizer/shafiyah-shalehah.png",
+  },
+  {
+    name: "PureWay",
+    src: "/assets/images/logos/organizer/Pureway_Black_Baru-removebg-preview.png",
+    className: "is-pureway",
+  },
+  {
+    name: "Shafiyah Expo",
+    src: "/assets/images/logos/organizer/Logo Shafiyah Expo_black.png",
+  },
+  {
+    name: "Shafiyah Journey",
+    src: "/assets/images/logos/organizer/shafiyah-journey.png",
+  },
+];
+
+const speakers = [
+  {
+    name: "Ustadz Khanif Muslim",
+    role: "Dewan Pembina Yayasan Peduli Muslim Yogyakarta",
+    image: "/assets/images/speakers/Ustadz Khanif Muslim.webp",
+  },
+  {
+    name: "Ustadz Ahmad Ubaidillah",
+    role: "Direktur Kursus Bahasa Arab KUBA, Pengasuh Ma'had Al-Mubarok",
+    image: "/assets/images/speakers/Ustadz Ahmad Ubaidillah.webp",
+  },
+  {
+    name: "Ustadz Khalid Basalamah",
+    role: "Pendiri Gazwah Enterprise & Gazwah TV",
+    image: "/assets/images/speakers/Ustadz Khalid Basalamah.webp",
+  },
+  {
+    name: "Ustadz Muhammad Abduh Tuasikal",
+    role: "Pendiri & Pengasuh Utama Rumaysho.com",
+    image: "/assets/images/speakers/Ustadz Muhammad Abduh Tuasikal.webp",
+  },
+  {
+    name: "Ustadz Erlan Iskandar",
+    role: "Pembina Yayasan Maktabah Alfaiz Indonesia",
+    image: "/assets/images/speakers/Ustadz Erlan Iskandar.webp",
+  },
+  {
+    name: "Ustadz Raehanul Bahraen",
+    role: "Pembina Yayasan Indonesia Bertauhid & Yayasan Pendidikan Muslimafiyah Indonesia",
+    image: "/assets/images/speakers/Ustadz Raehanul Bahraen.webp",
+  },
+  {
+    name: "Coach Wulan",
+    role: "CEO PT Pelatih Indonesia Berlimpah, Certified NLP Coach",
+    image: "/assets/images/speakers/Coach Wulan.webp",
+  },
+  {
+    name: "Coach Yoso Lukito",
+    role: "Founder & CEO Sekolah Digital Bisnis Indonesia (SDBI)",
+    image: "/assets/images/speakers/Coach Yoso Lukito.webp",
+  },
+  {
+    name: "Okta Wirawan",
+    role: "Founder & Chairman of ABUYA Grup, Owner Almaz Fried Chicken",
+    image: "/assets/images/speakers/Okta Wirawan.webp",
+  },
+  {
+    name: "Deryansha Azhary",
+    role: "Founder & CEO of Kasisolusi",
+    image: "/assets/images/speakers/Deryansha Azhary.webp",
+  },
+  {
+    name: "Ustadz Kamil Ramadhan",
+    role: "Juara 1 Hafiz Indonesia 2017, Alumni Pesantren de Muttaqin Yogyakarta",
+    image: "/assets/images/speakers/Ustadz Kamil Ramadhan.png",
+  },
+];
+
 const rundownDays = [
   {
     id: "day-1",
@@ -113,7 +200,7 @@ const rundownDays = [
         duration: "180'",
         activity:
           'Shafiyah Running "Gold Running while staying healthy, beauty, and shar\'i"',
-        star: "KAF Wardah / Paragon",
+        star: "Kahf Wardah / Paragon",
       },
       {
         time: "09.00-11.00",
@@ -239,6 +326,18 @@ export default function InvitationPage() {
         <div className="inv-hero-overlay" />
         <div className="inv-container inv-hero-inner">
           <div className="inv-hero-slider" key={activeSlide} aria-live="polite">
+            <div className="inv-hero-logo-row" aria-label="Logo pendukung acara">
+              {eventLogos.map((logo) => (
+                <img
+                  className={`inv-hero-logo ${logo.className || ""}`.trim()}
+                  src={logo.src}
+                  alt={logo.name}
+                  key={logo.name}
+                  loading="eager"
+                  decoding="async"
+                />
+              ))}
+            </div>
             <div className="inv-eyebrow-row">
               <span className="inv-eyebrow">Undangan Resmi</span>
               <span className="inv-eyebrow">{currentSlide.day}</span>
@@ -342,6 +441,32 @@ export default function InvitationPage() {
             >
               Isi Google Form
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="inv-section inv-speakers" aria-labelledby="speakers-heading">
+        <div className="inv-container">
+          <div className="inv-section-heading inv-speakers-heading">
+            <p className="inv-section-kicker">Speakers</p>
+            <h2 id="speakers-heading">Speakers Shafiyah Expo PureWay</h2>
+          </div>
+
+          <div className="inv-speaker-grid">
+            {speakers.map((speaker) => (
+              <article className="inv-speaker-card" key={speaker.name}>
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="inv-speaker-info">
+                  <h3>{speaker.name}</h3>
+                  <p>{speaker.role}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
