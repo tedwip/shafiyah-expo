@@ -8,17 +8,12 @@ const EVENT_MAP_URL =
 
 const eventLogos = [
   {
-    name: "BSI",
-    src: "/assets/images/logos/sponsor/bsi.png",
-    className: "is-bsi",
+    name: "Shafiyah Journey",
+    src: "/assets/images/logos/organizer/shafiyah-journey.png",
   },
   {
-    name: "Rumaysho",
-    src: "/assets/images/logos/organizer/rumaysho.png",
-  },
-  {
-    name: "Shafiyah Shalihah",
-    src: "/assets/images/logos/organizer/shafiyah-shalehah.png",
+    name: "Shafiyah Expo",
+    src: "/assets/images/logos/organizer/Logo Shafiyah Expo_black.png",
   },
   {
     name: "PureWay",
@@ -26,12 +21,17 @@ const eventLogos = [
     className: "is-pureway",
   },
   {
-    name: "Shafiyah Expo",
-    src: "/assets/images/logos/organizer/Logo Shafiyah Expo_black.png",
+    name: "Shafiyah Shalehah",
+    src: "/assets/images/logos/organizer/shafiyah-shalehah.png",
   },
   {
-    name: "Shafiyah Journey",
-    src: "/assets/images/logos/organizer/shafiyah-journey.png",
+    name: "Rumaysho.com",
+    src: "/assets/images/logos/organizer/rumaysho.png",
+  },
+  {
+    name: "BSI",
+    src: "/assets/images/logos/sponsor/bsi.png",
+    className: "is-bsi",
   },
 ];
 
