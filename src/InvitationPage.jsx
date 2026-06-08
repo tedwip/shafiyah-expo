@@ -10,7 +10,7 @@ const rundownDays = [
   {
     id: "day-1",
     date: "Jumat, 19 Juni 2026",
-    label: "Opening Day",
+    label: "Day 1",
     tone: "gold",
     sessions: [
       {
@@ -58,7 +58,7 @@ const rundownDays = [
   {
     id: "day-2",
     date: "Sabtu, 20 Juni 2026",
-    label: "Main Stage",
+    label: "Day 2",
     tone: "blue",
     sessions: [
       {
@@ -105,7 +105,7 @@ const rundownDays = [
   {
     id: "day-3",
     date: "Minggu, 21 Juni 2026",
-    label: "Closing Day",
+    label: "Day 3",
     tone: "rose",
     sessions: [
       {
@@ -160,13 +160,13 @@ const rundownDays = [
 ];
 
 const heroIntroSlide = {
-  day: "Undangan Resmi",
+  day: "Program Acara",
   activity: "Program Acara Shafiyah Expo PureWay",
   star:
-    "Dengan hormat, kami mengundang Bapak/Ibu untuk hadir dalam pembukaan Shafiyah Expo PureWay dan mengikuti rangkaian sesi pilihan di Main Stage.",
+    "Dengan hormat, kami mengundang Bapak/Ibu untuk hadir dalam pembukaan Shafiyah Expo PureWay dan mengikuti rangkaian sesi pilihan program acara.",
   date: EVENT_DATE_RANGE,
   scheduleLabel: "Agenda",
-  scheduleValue: "Opening Ceremony & Main Stage",
+  scheduleValue: "Opening Ceremony & Program Acara",
   detailLabel: "Rangkaian",
   detailValue: "3 Hari Acara",
 };
@@ -239,8 +239,13 @@ export default function InvitationPage() {
         <div className="inv-hero-overlay" />
         <div className="inv-container inv-hero-inner">
           <div className="inv-hero-slider" key={activeSlide} aria-live="polite">
-            <p className="inv-eyebrow">{currentSlide.day}</p>
-            <h1>{currentSlide.activity}</h1>
+            <div className="inv-eyebrow-row">
+              <span className="inv-eyebrow">Undangan Resmi</span>
+              <span className="inv-eyebrow">{currentSlide.day}</span>
+            </div>
+            <h1 className={currentSlide.activity.length > 64 ? "is-long-title" : undefined}>
+              {currentSlide.activity}
+            </h1>
             <p className="inv-hero-copy">
               {currentSlide.star}
             </p>
@@ -252,19 +257,8 @@ export default function InvitationPage() {
               <strong>{currentSlide.date}</strong>
             </div>
             <div>
-              <span>Lokasi Acara</span>
-              <strong>{EVENT_LOCATION}</strong>
-              <a className="inv-map-link" href={EVENT_MAP_URL} target="_blank" rel="noopener">
-                Buka Maps
-              </a>
-            </div>
-            <div>
               <span>{currentSlide.scheduleLabel}</span>
               <strong>{currentSlide.scheduleValue}</strong>
-            </div>
-            <div>
-              <span>{currentSlide.detailLabel}</span>
-              <strong>{currentSlide.detailValue}</strong>
             </div>
           </div>
 
@@ -284,6 +278,9 @@ export default function InvitationPage() {
                 />
               ))}
             </div>
+            <span className="inv-slider-count">
+              {activeSlide + 1} / {heroSlides.length}
+            </span>
             <button type="button" onClick={showNextSlide} aria-label="Acara berikutnya">
               &#8250;
             </button>
@@ -318,7 +315,11 @@ export default function InvitationPage() {
         <div className="inv-container inv-greeting-grid">
           <div>
             <p className="inv-section-kicker">Greeting</p>
-            <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+            <h2 className="inv-salam-heading">
+              <span>Assalamu'alaikum</span>
+              <span>Warahmatullahi</span>
+              <span>Wabarakatuh</span>
+            </h2>
             <p>
               Kehadiran Bapak/Ibu menjadi bagian penting dari ikhtiar menghadirkan
               ruang muslim lifestyle yang inspiratif, tertib, dan membawa manfaat
@@ -384,13 +385,13 @@ export default function InvitationPage() {
                     <tbody>
                       {day.sessions.map((session, index) => (
                         <tr key={`${day.id}-${session.time}`}>
-                          <td>{index + 1}</td>
-                          <td>{session.time}</td>
-                          <td>{session.duration}</td>
-                          <td>
+                          <td data-label="No">{index + 1}</td>
+                          <td data-label="Waktu">{session.time}</td>
+                          <td data-label="Durasi">{session.duration}</td>
+                          <td data-label="Aktivitas">
                             <strong>{session.activity}</strong>
                           </td>
-                          <td>{session.star}</td>
+                          <td data-label="Star">{session.star}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -404,7 +405,9 @@ export default function InvitationPage() {
 
       <section className="inv-final">
         <div className="inv-container">
-          <h2>Sampai bertemu di Shafiyah Expo PureWay</h2>
+          <h2 className="inv-final-heading">
+            Sampai bertemu di Shafiyah Expo PureWay
+          </h2>
           <p>
             Silakan simpan halaman ini dan lakukan konfirmasi kehadiran melalui
             Google Form resmi tamu undangan.
