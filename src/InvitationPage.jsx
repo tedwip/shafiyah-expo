@@ -226,7 +226,7 @@ const rundownDays = [
         time: "16.00-17.30",
         duration: "90'",
         activity:
-          'Talkshow Kopi "#Memberi Arti Lebih dari tehnik Seduhan Kopi Tubruk paling jujur"',
+          'Talkshow Kopi "#Memberi Arti Lebih dari Seduhan Kopi Tubruk paling jujur"',
         star: "Riyanto Larkahadi & Pakde Sasongko",
       },
       {
