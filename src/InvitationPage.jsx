@@ -104,7 +104,7 @@ const rundownDays = [
         time: "08.00-09.00",
         duration: "60'",
         activity: "Opening Ceremony",
-        star: "Menteri UMKM / Kepala Dinas UMKM, GKR Bendara, Dinas Pariwisata, Dinas Koperasi dan UMKM",
+        star: "Menteri UMKM / Kepala Dinas UMKM, Gusti Kanjeng Ratu Bendara",
       },
       {
         time: "09.00-11.00",
@@ -117,27 +117,27 @@ const rundownDays = [
         time: "13.00-14.30",
         duration: "90'",
         activity:
-          'Talkshow Muamalah "Strategi emas - Bongkar rahasia agar keluarga bisa Umroh/haji"',
+          'Talkshow Muamalah "Strategi emas -Bongkar rahasia agar sekeluarga bisa Umroh/Haji"',
         star: "BSI",
       },
       {
         time: "16.00-17.30",
         duration: "90'",
         activity:
-          'Talkshow Kesehatan Psikologis "Peran orang tua antisipasi penyimpangan seksual anak sejak dini"',
-        star: "Ustadz Rehanul Bahraen / Journey",
+          'Talkshow Kesehatan Psikologis "Peran orang tua Antisipasi Penyimpangan seksual anak sejak dini"',
+        star: "Ustadz Rehanul Bahraen",
       },
       {
         time: "18.00-19.00",
         duration: "60'",
         activity: "Promosi Tenant (succes Story)",
-        star: "Tenant pilihan",
+        star: "Tenant Pilihan",
       },
       {
         time: "19.30-21.00",
         duration: "90'",
         activity:
-          'Talkshow Marketing Digital "Langkah emas optimasi branding melalui digital marketing bagi pebisnis pemula"',
+          'Talkshow Marketing Digital "Langkah emas Optimasi Branding melalui digital Marketing bagi Pebisnis Pemula"',
         star: "Coach Yoso",
       },
     ],
@@ -166,25 +166,25 @@ const rundownDays = [
         duration: "120'",
         activity:
           'Talkshow Digital Marketing Optimal & Network Collaboration "Tetap Tumbuh di Era Ketidakpastian Bisnis"',
-        star: "Okta Wirawan feat Coach Yoso",
+        star: "Okta Wirawan Feat Coach Yoso",
       },
       {
         time: "16.00-17.30",
         duration: "90'",
-        activity: 'Kopdar Komunitas "Agar hobi meraih Ridho Ilahi"',
-        star: "Ustadz Hanif Muslim dan Member MBI",
+        activity: 'Kopdar Komunitas "Agar Hobi meraih Ridho Ilahi"',
+        star: "Ustadz Khanif Muslim dan Member MBI",
       },
       {
         time: "18.00-19.00",
         duration: "60'",
         activity: "Promosi Tenant (succes Story)",
-        star: "Tenant pilihan",
+        star: "Tenant Pilihan",
       },
       {
         time: "19.30-21.00",
         duration: "30'",
         activity:
-          'Kajian Penggugah Hati "Nasihat emas cara kelola emosional dan spiritual agar istiqomah ketika berhijrah"',
+          'Kajian Penggugah Hati "Nasihat Emas cara kelola emosional dan Spiritual agar istiqomah ketika berhijrah"',
         star: "Ustadz Khalid Basalamah",
       },
     ],
@@ -199,47 +199,47 @@ const rundownDays = [
         time: "05.00-08.00",
         duration: "180'",
         activity:
-          'Shafiyah Running "Gold Running while staying healthy, beauty, and shar\'i"',
-        star: "Kahf Wardah / Paragon",
+          'Shafiyyah Running "Gold Running While staying Healty, Beauty, and Shar\'i"',
+        star: "Kahf Wardah/Paragon",
       },
       {
         time: "09.00-11.00",
         duration: "120'",
         activity:
-          'Talkshow Rumah Tangga "Wanita di persimpangan surga dan neraka"',
-        star: "Ahmad Ubaidillah Almahbaroh",
+          'Talkshow Rumah Tangga "Wanita dipersimpangan Surga dan Neraka"',
+        star: "Ustadz Ahmad Ubaidillah Almahbaroh",
       },
       {
         time: "11.00-11.30",
         duration: "30'",
-        activity: "Promosi Tenant (Bazaar pesta voucher)",
-        star: "Tenant pilihan",
+        activity: "Talkshow By : Wardah & Kahf",
+        star: "Wardah & Kahf",
       },
       {
         time: "13.00-14.30",
         duration: "90'",
         activity:
-          'Talk Show Bisnis "Langkah emas kelola financial agar #SemuaJadiMudah dan Berkah"',
+          'Talk Show Bisnis "Langkah emas kelola Financial agar #Semua Jadi Mudah dan Berkah"',
         star: "BSI",
       },
       {
         time: "16.00-17.30",
         duration: "90'",
         activity:
-          'Talkshow Filosofi Kopi "#MemberiArtiLebih dari tehnik seduhan Kopi Tubruk paling jujur"',
-        star: "Riyanto Larkahadi Sasongko, BKVRI",
+          'Talkshow Kopi "#Memberi Arti Lebih dari tehnik Seduhan Kopi Tubruk paling jujur"',
+        star: "Riyanto Larkahadi & Pakde Sasongko",
       },
       {
         time: "18.00-19.00",
         duration: "60'",
         activity:
-          "Kajian Parenting \"Membentuk generasi emas yang Qur'ani, mandiri dan bertaqwa\"",
-        star: "Kamil Ramadhan",
+          "Kajian Parenting \"Membentuk Generasi Emas Yang Qur'ani, Mandiri dan Bertaqwa\"",
+        star: "Ustadz Kamil Ramadhan",
       },
       {
         time: "19.30-21.00",
         duration: "90'",
-        activity: "Closing dan pembagian doorprize",
+        activity: "Closing dan Pembagian doorprize",
         star: "Panitia Shafiyah Expo",
       },
     ],
@@ -365,18 +365,6 @@ export default function InvitationPage() {
             <button type="button" onClick={showPreviousSlide} aria-label="Acara sebelumnya">
               &#8249;
             </button>
-            <div className="inv-slider-dots" aria-label="Pilih acara">
-              {heroSlides.map((slide, index) => (
-                <button
-                  className={index === activeSlide ? "is-active" : ""}
-                  key={`${slide.date}-${slide.time}-${slide.activity}`}
-                  type="button"
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Lihat ${slide.activity}`}
-                  aria-current={index === activeSlide ? "true" : undefined}
-                />
-              ))}
-            </div>
             <span className="inv-slider-count">
               {activeSlide + 1} / {heroSlides.length}
             </span>
@@ -458,8 +446,11 @@ export default function InvitationPage() {
                 <img
                   src={speaker.image}
                   alt={speaker.name}
+                  width="459"
+                  height="544"
                   loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="inv-speaker-info">
                   <h3>{speaker.name}</h3>
